@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <modules>
+        <Lanot_EasyBanner>
+            <version>1.1.1.1</version>
+        </Lanot_EasyBanner>
+    </modules>
+
+    <global>
+
+        <helpers>
+            <lanot_easybanner>
+                <class>Lanot_EasyBanner_Helper</class>
+            </lanot_easybanner>
+        </helpers>
+
+        <blocks>
+            <lanot_easybanner>
+                <class>Lanot_EasyBanner_Block</class>
+            </lanot_easybanner>
+        </blocks>
+
+        <models>
+            <lanot_easybanner>
+                <class>Lanot_EasyBanner_Model</class>
+                <resourceModel>lanot_easybanner_resource</resourceModel>
+            </lanot_easybanner>
+
+            <lanot_easybanner_resource>
+                <class>Lanot_EasyBanner_Model_Mysql4</class>
+                <entities>
+                    <banner>
+                        <table>lanot_easybanner_banner</table>
+                    </banner>
+                    <category>
+                        <table>lanot_easybanner_category</table>
+                    </category>
+                    <banner_category>
+                        <table>lanot_easybanner_banner_category</table>
+                    </banner_category>
+                </entities>
+            </lanot_easybanner_resource>
+
+            <widget>
+                <rewrite>
+                    <widget_instance>Lanot_EasyBanner_Model_Widget_Instance</widget_instance>
+                </rewrite>
+            </widget>
+        </models>
+
+        <!--  MySQL INSTALL SCRIPTS -->
+        <resources>
+            <lanot_easybanner_setup>
+                <setup>
+                    <module>Lanot_EasyBanner</module>
+                </setup>
+            </lanot_easybanner_setup>
+        </resources>
+        <!-- /MySQL INSTALL SCRIPTS -->
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <lanot_easybanner>
+                    <file>lanot_easybanner.xml</file>
+                </lanot_easybanner>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <lanot_easybanner>
+                <use>admin</use>
+                <args>
+                    <module>Lanot_EasyBanner</module>
+                    <frontName>lanot_easybanner</frontName>
+                </args>
+            </lanot_easybanner>
+        </routers>
+    </admin>
+
+    <lanot_easybanner>
+        <renderers>
+            <image>lanot_easybanner/banner_renderer_image</image>
+            <flash>lanot_easybanner/banner_renderer_flash</flash>
+            <custom>lanot_easybanner/banner_renderer_custom</custom>
+        </renderers>
+    </lanot_easybanner>
+
+    <default>
+        <lanot_easybanner>
+            <extensions>
+                <allowed>
+                    <image>
+                        <jpg>1</jpg>
+                        <jpeg>1</jpeg>
+                        <png>1</png>
+                        <gif>1</gif>
+                    </image>
+                    <flash>
+                        <swf>1</swf>
+                    </flash>
+                </allowed>
+            </extensions>
+            <view>
+                <enabled>1</enabled>
+                <new_window>1</new_window>
+                <block_css_class>block-banner</block_css_class>
+                <item_css_class>block-content</item_css_class>
+                <!-- <title_css_class>page-title</title_css_class> -->
+            </view>
+        </lanot_easybanner>
+    </default>
+</config>

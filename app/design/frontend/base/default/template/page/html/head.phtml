@@ -1,0 +1,106 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<title><?php echo $this->getTitle() ?></title>
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
+    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+//]]>
+</script>
+<![endif]-->
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+<script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+jQuery.noConflict()
+jQuery(document).ready(function($) 
+   {
+     $("#zipLookUp").click(function () 
+      {
+		  doAjax();
+		
+		})
+
+function doAjax() {
+	
+		  
+		  
+		var vCountry = $("#country").val();
+		var vCode = $("#zip").val();
+
+		var formdata = "country/"+vCountry+"/code/"+vCode;
+		
+
+			jQuery.ajax({
+			url: "/_magento/postaladdress/index/ajax/"+formdata,
+			type: "get",
+			data: formdata,
+			dataType: 'json',
+			success: function(data)
+				{
+					if (data.key == 'Valid') {
+						$("#street_1").val(data.msg);
+						$("#blockno").val(data.bno);
+						if (data.unr == '1' || data.snr == '1' || data.wnr == '1') {
+							$("#unitno").removeClass( "required-entry" ).addClass( " required-entry" );
+							$("#lblunitno").removeClass("required").addClass("required");
+							$("#mandunitno").show();
+						} else {
+							$("#unitno").removeClass( "required-entry" );
+							$("#lblunitno").removeClass("required");
+							$("#mandunitno").hide();
+						}
+						console.dir(data);
+					}
+					
+				},
+			error: function(jqXHR, textStatus, errorThrown)
+				{ 
+					console.dir(errorThrown);
+					alert('Error:'+errorThrown); 
+					
+				}
+				
+			});
+
+	
+      
+	}
+
+});
+
+
+</script>

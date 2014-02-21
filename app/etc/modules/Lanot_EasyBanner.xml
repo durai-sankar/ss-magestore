@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Lanot_EasyBanner>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Lanot_EasyBanner>
+    </modules>
+</config>

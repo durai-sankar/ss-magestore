@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Lanot
+ */
+-->
+<layout>
+
+	<!-- ADMIN CATEGORIES -->
+    <lanot_easybanner_adminhtml_category_index>
+        <reference name="content">
+            <block type="lanot_easybanner/adminhtml_category" name="easybanner_category" />
+        </reference>
+    </lanot_easybanner_adminhtml_category_index>
+
+    <lanot_easybanner_adminhtml_category_grid>
+        <block type="lanot_easybanner/adminhtml_category_grid" name="root"/>
+    </lanot_easybanner_adminhtml_category_grid>
+    
+    <lanot_easybanner_adminhtml_category_new>
+        <update handle="lanot_easybanner_adminhtml_category_edit" />
+    </lanot_easybanner_adminhtml_category_new>
+            
+    <lanot_easybanner_adminhtml_category_edit>
+    	<reference name="content">
+            <block type="lanot_easybanner/adminhtml_category_edit" name="easybanner_category_edit" />
+        </reference>
+        <reference name="left">
+            <block type="lanot_easybanner/adminhtml_category_edit_tabs" name="category_edit_tabs" />
+        </reference>        
+    </lanot_easybanner_adminhtml_category_edit>
+
+    <lanot_easybanner_adminhtml_category_ajaxbannersgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_easybanner/adminhtml_category_edit_tab_banners" name="banner.edit.tab.grid"/>
+            <block type="adminhtml/widget_grid_serializer" name="banner_grid_serializer">
+                <reference name="banner_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>banner.edit.tab.grid</grid_block_name>
+                        <data_callback>getSelectedLinks</data_callback>
+                        <hidden_input_name>banners</hidden_input_name>
+                        <reload_param_name>banners</reload_param_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </lanot_easybanner_adminhtml_category_ajaxbannersgrid>
+
+    <lanot_easybanner_adminhtml_category_ajaxbannersgridonly>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_easybanner/adminhtml_category_edit_tab_banners" name="banner.edit.tab.grid"/>
+        </block>
+    </lanot_easybanner_adminhtml_category_ajaxbannersgridonly>
+    <!-- /ADMIN CATEGORIES -->
+
+
+
+    <!-- ADMIN BANNERS -->
+    <lanot_easybanner_adminhtml_banner_index>
+        <reference name="content">
+            <block type="lanot_easybanner/adminhtml_banner" name="easybanner_banner" />
+        </reference>
+    </lanot_easybanner_adminhtml_banner_index>
+
+    <lanot_easybanner_adminhtml_banner_grid>
+        <block type="lanot_easybanner/adminhtml_banner_grid" name="root"/>
+    </lanot_easybanner_adminhtml_banner_grid>
+
+    <adminhtml_news_grid>
+        <block type="magentostudy_news/adminhtml_news_grid" name="root"/>
+    </adminhtml_news_grid>
+
+    <lanot_easybanner_adminhtml_banner_new>
+        <update handle="lanot_easybanner_adminhtml_banner_edit" />
+    </lanot_easybanner_adminhtml_banner_new>
+
+    <lanot_easybanner_adminhtml_banner_edit>
+        <reference name="content">
+            <block type="lanot_easybanner/adminhtml_banner_edit" name="easybanner_banner_edit" />
+        </reference>
+        <reference name="left">
+            <block type="lanot_easybanner/adminhtml_banner_edit_tabs" name="banner_edit_tabs" />
+        </reference>
+    </lanot_easybanner_adminhtml_banner_edit>
+
+    <lanot_easybanner_adminhtml_banner_ajaxcategoriesgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_easybanner/adminhtml_banner_edit_tab_categories" name="category.edit.tab.grid"/>
+            <block type="adminhtml/widget_grid_serializer" name="category_grid_serializer">
+                <reference name="category_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>category.edit.tab.grid</grid_block_name>
+                        <data_callback>getSelectedLinks</data_callback>
+                        <hidden_input_name>categories</hidden_input_name>
+                        <reload_param_name>categories</reload_param_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </lanot_easybanner_adminhtml_banner_ajaxcategoriesgrid>
+
+    <lanot_easybanner_adminhtml_banner_ajaxcategoriesgridonly>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="lanot_easybanner/adminhtml_banner_edit_tab_categories" name="category.edit.tab.grid"/>
+        </block>
+    </lanot_easybanner_adminhtml_banner_ajaxcategoriesgridonly>
+    <!-- /ADMIN BANNERS -->
+
+</layout>

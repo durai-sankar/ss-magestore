@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ultimate_ordersBatches extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Ultimate
+ * @package		Ultimate_ordersBatches
+ * @copyright  	Copyright (c) 2014
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+	<modules>
+		<Ultimate_ordersBatches>
+			<version>0.0.1</version>
+		</Ultimate_ordersBatches>
+	</modules>
+	<global>
+		<resources>
+			<ultimate_ordersbatches_setup>
+				<setup>
+					<module>Ultimate_ordersBatches</module>
+					<class>Ultimate_ordersBatches_Model_Resource_Setup</class>
+				</setup>
+			</ultimate_ordersbatches_setup>
+		</resources>
+		<blocks>
+			<ordersbatches>
+				<class>Ultimate_ordersBatches_Block</class>
+			</ordersbatches>
+		</blocks>
+		<helpers>
+			<ordersbatches>
+				<class>Ultimate_ordersBatches_Helper</class>
+			</ordersbatches>
+		</helpers>
+		<models>
+			<ordersbatches>
+				<class>Ultimate_ordersBatches_Model</class>
+				<resourceModel>ordersbatches_resource</resourceModel>
+			</ordersbatches>
+			<ordersbatches_resource>
+				<class>Ultimate_ordersBatches_Model_Resource</class>
+				<entities>
+					<batche>
+						<table>ordersbatches_batche</table>
+					</batche>
+					<batche_store>
+						<table>ordersbatches_batche_store</table>
+					</batche_store>
+					<batche_product>
+						<table>ordersbatches_batche_product</table>
+					</batche_product>
+				</entities>
+			</ordersbatches_resource>
+		</models>
+	</global>
+	<adminhtml>
+		<layout>
+			<updates>
+				<ultimate_ordersbatches>
+					<file>ultimate_ordersbatches.xml</file>
+				</ultimate_ordersbatches>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<Ultimate_ordersBatches>
+					<files>
+						<default>Ultimate_ordersBatches.csv</default>
+					</files>
+				</Ultimate_ordersBatches>
+			</modules>
+		</translate>
+		<events>
+			<core_block_abstract_prepare_layout_after>
+				<observers>
+					<batche>
+						<type>singleton</type>
+						<class>ordersbatches/adminhtml_observer</class>
+						<method>addBatcheBlock</method>
+					</batche>
+				</observers>
+			</core_block_abstract_prepare_layout_after>
+			<catalog_product_save_after>
+				<observers>
+					<batche>
+						<type>singleton</type>
+						<class>ordersbatches/adminhtml_observer</class>
+						<method>saveBatcheData</method>
+					</batche>
+				</observers>
+			</catalog_product_save_after>
+		</events>
+		<global_search>
+			<batche>
+				<class>ordersbatches/adminhtml_search_batche</class>
+				<acl>ordersbatches</acl>
+			</batche>
+		</global_search>
+	</adminhtml>
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<Ultimate_ordersBatches before="Mage_Adminhtml">Ultimate_ordersBatches_Adminhtml</Ultimate_ordersBatches>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+	<default>
+		<ordersbatches>
+		</ordersbatches>
+	</default>
+</config>

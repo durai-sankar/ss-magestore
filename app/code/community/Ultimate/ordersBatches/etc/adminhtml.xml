@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ultimate_ordersBatches extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Ultimate
+ * @package		Ultimate_ordersBatches
+ * @copyright  	Copyright (c) 2014
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<ordersbatches translate="title" module="ordersbatches">
+										<title>ordersBatches</title>
+									</ordersbatches>
+								</children>
+							</config>
+						</children>
+					</system>
+					<ordersbatches translate="title" module="ordersbatches">
+						<title>ordersBatches</title>
+						<children>
+							<batche translate="title" module="ordersbatches">
+								<title>Batches</title>
+							</batche>
+						</children>
+					</ordersbatches>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+	<menu>
+		<ordersbatches translate="title" module="ordersbatches">
+			<title>ordersBatches</title>
+			<sort_order>7</sort_order>
+			<depends>
+				<module>Ultimate_ordersBatches</module>
+		 	</depends>
+		 	<children>
+				<batche translate="title" module="ordersbatches">
+					<title>Batches</title>
+					<action>adminhtml/ordersbatches_batche</action>
+					<sort_order>0</sort_order>
+				</batche>
+			</children>
+		</ordersbatches>
+	</menu>
+</config>

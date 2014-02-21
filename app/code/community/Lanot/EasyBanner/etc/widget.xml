@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<widgets>
+    <lanot_easybanner type="lanot_easybanner/widget_banners" translate="name">
+        <name>Lanot Banner</name>
+        <description>Displays Banners By Category</description>
+        <parameters>
+            <category_id translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Banners Category</label>
+                <type>select</type>
+                <source_model>lanot_easybanner/category</source_model>
+            </category_id>
+            <limit translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <label>Banners Count</label>
+                <type>text</type>
+                <style>width: 50px;</style>
+                <value>1</value>
+            </limit>
+            <random translate="label">
+                <visible>1</visible>
+                <label>Show Random</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </random>
+            <!--
+            <show_title translate="label">
+                <visible>1</visible>
+                <label>Show Widget Title</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+            </show_title>
+            -->
+        </parameters>
+    </lanot_easybanner>
+</widgets>

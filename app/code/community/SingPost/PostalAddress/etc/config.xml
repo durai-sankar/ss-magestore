@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SingPost_PostalAddress>
+            <version>0.1.0</version>    <!-- Version of module -->
+        </SingPost_PostalAddress>
+    </modules>
+    <frontend>
+        <routers>
+            <test>
+                <use>standard</use>
+                <args>
+                    <module>SingPost_PostalAddress</module>
+                    <frontName>postaladdress</frontName>
+					  
+                </args>
+
+            </test>
+        </routers>
+    </frontend>
+	
+    <global>
+        <blocks>
+            <test>
+                <class>SingPost_PostalAddress_Block</class>  <!-- Path of the
+ Block Folder, where all php files are located related to view -->
+            </test>
+        </blocks>
+        <helpers>
+            <test>
+                <class>SingPost_PostalAddress_Helper</class> 
+<!-- Path of Helper Files -->
+            </test>
+        </helpers>
+
+	<models>
+        <singpost_postaladdress>
+            <class>SingPost_PostalAddress_Model</class> <!-- Location of all model class files -->
+            <resourceModel>singpost_postaladdress_mysql4</resourceModel>
+        </singpost_postaladdress>
+		
+		<singpost_postaladdress_mysql4>
+			 <class>SingPost_PostalAddress_Model_Mysql4</class>
+			 <entities>
+				 <postcode>
+				   <table>postaladdress_postcode</table>
+				 </postcode>
+					<building>
+				   <table>postaladdress_building</table>
+				 </building>				 
+					<streets>
+				   <table>postaladdress_streets</table>
+				 </streets>
+		 				 			 
+			  </entities>
+		</singpost_postaladdress_mysql4>        
+    </models>
+
+	<resources>
+			<!-- connection to write -->
+			<singpost_postaladdress_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</singpost_postaladdress_write>
+			<!-- connection to read -->
+		   <singpost_postaladdress_read>
+			  <connection>
+				 <use>core_read</use>
+			  </connection>
+		   </singpost_postaladdress_read>
+	</resources>
+		
+    </global>
+	
+</config>

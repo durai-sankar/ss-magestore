@@ -1,0 +1,23 @@
+<?php
+/** @var $this Lanot_EasyBanner_Block_Widget_Category */
+/** @var $helper Lanot_EasyBanner_Data_Helper */
+$helper = Mage::helper('lanot_easybanner');
+$bclass = $helper->getBlockCssClass();
+$iclass = $helper->getItemCssClass();
+$tclass = $helper->getTitleCssClass();
+
+if ($this->getItems()):
+?>
+<div <?php if($bclass):?>class="<?php echo $bclass?>"<?php endif;?>>
+    <?php if ($this->getShowTitle() && $this->getTitle()):?>
+        <div <?php if($tclass):?>class="<?php echo $tclass?>"<?php endif;?>>
+            <?php echo $this->getTitle() ;?>
+        </div>
+    <?php endif; ?>
+    <?php foreach($this->getItems() as $item): ?>
+        <div <?php if($iclass):?>class="<?php echo $iclass?>"<?php endif;?>>
+            <?php echo $this->render($item)?>
+        </div>
+    <?php endforeach; ?>
+</div>
+<?php endif;?>

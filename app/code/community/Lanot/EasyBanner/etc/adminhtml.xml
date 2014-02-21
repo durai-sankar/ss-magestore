@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin config
+ *
+ * @author Lanot
+ */
+-->
+<config>
+
+    <menu>
+        <lanot translate="title">
+            <title>Lanot</title>
+            <sort_order>65</sort_order>
+            <children>
+                <lanot_easybanner translate="title">
+                    <title>Banners</title>
+                    <sort_order>50</sort_order>
+                    <children>
+                        <manage_banner translate="title" module="lanot_easybanner">
+                            <title>Manage Banners</title>
+                            <action>lanot_easybanner/adminhtml_banner</action>
+                            <sort_order>10</sort_order>
+                        </manage_banner>
+                        <manage_category translate="title" module="lanot_easybanner">
+                            <title>Manage Categories</title>
+                            <action>lanot_easybanner/adminhtml_category</action>
+                            <sort_order>20</sort_order>
+                        </manage_category>
+                    </children>
+                </lanot_easybanner>
+            </children>
+        </lanot>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <lanot>
+                        <title>Lanot</title>
+                        <sort_order>65</sort_order>
+                        <children>
+                            <lanot_easybanner translate="title" module="lanot_easybanner">
+                                <title>Lanot Banners</title>
+                                <sort_order>65</sort_order>
+                                <children>
+                                    <manage_banner translate="title">
+                                        <title>Manage Banners</title>
+                                        <sort_order>0</sort_order>
+                                        <children>
+                                            <save translate="title">
+                                                <title>Save Banners</title>
+                                                <sort_order>0</sort_order>
+                                            </save>
+                                            <delete translate="title">
+                                                <title>Delete Banners</title>
+                                                <sort_order>10</sort_order>
+                                            </delete>
+                                        </children>
+                                    </manage_banner>
+                                    <manage_category translate="title">
+                                        <title>Manage Categories</title>
+                                        <sort_order>0</sort_order>
+                                        <children>
+                                            <save translate="title">
+                                                <title>Save Categories</title>
+                                                <sort_order>0</sort_order>
+                                            </save>
+                                            <delete translate="title">
+                                                <title>Delete Categories</title>
+                                                <sort_order>10</sort_order>
+                                            </delete>
+                                        </children>
+                                    </manage_category>
+                                </children>
+                            </lanot_easybanner>
+                        </children>
+                    </lanot>
+
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <lanot_easybanner translate="title" module="lanot_easybanner">
+                                        <title>Lanot EasyBanner Configuration</title>
+                                    </lanot_easybanner>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+</config>

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ultimate_ordersBatches extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	Ultimate
+ * @package		Ultimate_ordersBatches
+ * @copyright  	Copyright (c) 2014
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+	<!-- Batches grid action -->
+	<adminhtml_ordersbatches_batche_index>
+		<reference name="menu">
+			<action method="setActive">
+				<menupath>ordersbatches/batche</menupath>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="ordersbatches/adminhtml_batche" name="batche" />
+		</reference>
+	</adminhtml_ordersbatches_batche_index>
+	<adminhtml_ordersbatches_batche_grid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="ordersbatches/adminhtml_batche_grid" name="batche_grid"/>
+		</block>
+	</adminhtml_ordersbatches_batche_grid>
+	<!-- Batche add/edit action -->
+	<adminhtml_ordersbatches_batche_edit>
+		<update handle="editor"/>
+		<reference name="menu">
+			<action method="setActive">
+				<menupath>ordersbatches/batche</menupath>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="ordersbatches/adminhtml_batche_edit" name="batche_edit"></block>
+		</reference>
+		<reference name="left">
+			<block type="ordersbatches/adminhtml_batche_edit_tabs" name="batche_tabs"></block>
+		</reference> 
+	</adminhtml_ordersbatches_batche_edit>
+	<adminhtml_ordersbatches_batche_catalog_product_batches>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="ordersbatches/adminhtml_catalog_product_edit_tab_batche" name="product.edit.tab.batche"/>
+			<block type="adminhtml/widget_grid_serializer" name="batche_grid_serializer">
+				<reference name="batche_grid_serializer">
+					<action method="initSerializerBlock">
+						<grid_block_name>product.edit.tab.batche</grid_block_name>
+						<data_callback>getSelectedBatches</data_callback>
+						<hidden_input_name>batches</hidden_input_name>
+						<reload_param_name>product_batches</reload_param_name>
+					</action>
+					<action method="addColumnInputName">
+						<input_name>position</input_name>
+					</action>
+				</reference>
+			</block>
+		</block>
+	</adminhtml_ordersbatches_batche_catalog_product_batches>
+	<adminhtml_ordersbatches_batche_catalog_product_batchesgrid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="ordersbatches/adminhtml_catalog_product_edit_tab_batche" name="product.edit.tab.batche"/>
+		</block>
+	</adminhtml_ordersbatches_batche_catalog_product_batchesgrid>
+	<adminhtml_ordersbatches_batche_products>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="ordersbatches/adminhtml_batche_edit_tab_product" name="batche.edit.tab.product"/>
+			<block type="adminhtml/widget_grid_serializer" name="product_grid_serializer">
+				<reference name="product_grid_serializer">
+					<action method="initSerializerBlock">
+						<grid_block_name>batche.edit.tab.product</grid_block_name>
+							<data_callback>getSelectedProducts</data_callback>
+							<hidden_input_name>products</hidden_input_name>
+							<reload_param_name>batche_products</reload_param_name>
+					</action>
+					<action method="addColumnInputName">
+						<input_name>position</input_name>
+					</action>
+				</reference>
+			</block>
+		</block>
+	</adminhtml_ordersbatches_batche_products>
+	<adminhtml_ordersbatches_batche_productsgrid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="ordersbatches/adminhtml_batche_edit_tab_product" name="batche.edit.tab.product"/>
+		</block>
+	</adminhtml_ordersbatches_batche_productsgrid>
+</layout>
