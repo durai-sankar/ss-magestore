@@ -74,26 +74,15 @@ function doAjax() {
 					if (data.key == 'Valid') {
 						$("#street_1").val(data.msg);
 						$("#blockno").val(data.bno);
-						if (data.unr == 'TRUE') {
+						if (data.unr == '1' || data.snr == '1' || data.wnr == '1') {
 							$("#unitno").removeClass( "required-entry" ).addClass( " required-entry" );
 							$("#lblunitno").removeClass("required").addClass("required");
 							$("#mandunitno").show();
-						} else if (data.unr == 'FALSE') {
+						} else {
 							$("#unitno").removeClass( "required-entry" );
 							$("#lblunitno").removeClass("required");
-							$('advice-required-entry-unitno').remove();
 							$("#mandunitno").hide();
 						}
-						if (data.fnr == 'TRUE') {
-							$("#floorno").removeClass( "required-entry" ).addClass( " required-entry" );
-							$("#lblfloorno").removeClass("required").addClass("required");
-							$("#mandfloorno").show();
-						} else if (data.unr == 'FALSE') {
-							$("#floorno").removeClass( "required-entry" );
-							$("#lblfloorno").removeClass("required");
-							$('advice-required-entry-floorno').remove();
-							$("#mandfloorno").hide();
-						}						
 						console.dir(data);
 					}
 					
