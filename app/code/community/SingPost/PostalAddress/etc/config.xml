@@ -43,14 +43,9 @@
 			 <class>SingPost_PostalAddress_Model_Mysql4</class>
 			 <entities>
 				 <postcode>
-				   <table>postaladdress_postcode</table>
+				   <table>6dpostcodes</table>
 				 </postcode>
-					<building>
-				   <table>postaladdress_building</table>
-				 </building>				 
-					<streets>
-				   <table>postaladdress_streets</table>
-				 </streets>
+
 		 				 			 
 			  </entities>
 		</singpost_postaladdress_mysql4>        

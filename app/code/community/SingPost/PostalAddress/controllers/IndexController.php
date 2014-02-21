@@ -28,8 +28,9 @@ class SingPost_PostalAddress_IndexController extends Mage_Core_Controller_Front_
 			
 		$code = $this->getRequest()->getParam('code');
 		$country = $this->getRequest()->getParam('country');
+
 		
-		$bno = ''; $msg = ''; $key = ''; $unr = ''; $snr = ''; $wnr = '';
+		$bno = ''; $msg = ''; $key = ''; $unr = ''; $fnr = '';
 		
 		if ($country == 'SG') {
 			
@@ -40,11 +41,11 @@ class SingPost_PostalAddress_IndexController extends Mage_Core_Controller_Front_
 				$key = 'Invalid';			
 			} else {
 				$key = 'Valid';
-				$ms = explode("~",$msg); $msg = $ms[0]; $bno = $ms[1]; $unr = $ms[2]; $snr = $ms[3]; $wnr = $ms[4];
+				$ms = explode("~",$msg); $msg = $ms[0]; $fnr = $ms[1]; $unr = $ms[2]; $bno = $ms[3];
 			}
 		}	
 		
-		$result = array("msg"=>$msg ,"key"=>$key, "bno"=>$bno, "unr"=>$unr, "snr"=>$snr, "wnr"=>$wnr);
+		$result = array("msg"=>$msg ,"key"=>$key, "fnr"=>$fnr, "unr"=>$unr, "bno"=>$bno);
 			
 		$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
 		
