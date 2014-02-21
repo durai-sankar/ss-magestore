@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>SG_PostalCode</name>
+    <version>1.0.0</version>
+    <stability>beta</stability>
+    <license>OPEN</license>
+    <channel>Local</channel>
+    <extends/>
+    <summary>SingPost</summary>
+    <description>SingPost</description>
+    <notes>SingPost</notes>
+    <authors><author><name>Durai Sankar</name><user>admin</user><email>durai.sankar.sg@gmail.com</email></author></authors>
+    <date>2014-02-19</date>
+    <time>09:19:06</time>
+    <contents><target name="magecommunity"><dir name="SingPost"><dir name="PostalAddress"><dir name="Model"><file name="Address.php" hash="7f9ae2b3d3174358e6d748810d7f4b38"/><file name="Building.php" hash="a66934d04603ba759014c166e8babd0b"/><dir name="Mysql4"><file name="Address.php" hash="3638ad7eaaae2370e9b3145256b0147d"/><file name="Building.php" hash="64eb728b9aad20262b3e72e6e879346d"/><file name="Postcode.php" hash="7b2296c32876c1978d81b68767daa291"/><file name="Streets.php" hash="a03fbf8b896c96fe5efab2929e8d319b"/></dir><file name="Postcode.php" hash="d0c548a7da23f030847933a6850cf523"/><file name="Streets.php" hash="50c1e86ff35d2ab1dd9ebe922f734e4b"/></dir><dir name="controllers"><file name="IndexController.php" hash="daae4c498b10f4a35e84f75f114c0bb7"/></dir><dir name="etc"><file name="config.xml" hash="c52e4049842b27a1b72f98855844695c"/></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.0.0</min><max>5.5.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+<extension>Ultimate_ordersBatches</extension>
+<namespace>Ultimate</namespace>
+<module_name>ordersBatches</module_name>
+<codepool>community</codepool>
+<install>0</install>
+<version></version>
+<front_package>base</front_package>
+<front_templates>default</front_templates>
+<front_layout>default</front_layout>
+<license>{{Namespace}}_{{Module}} extension
+
+NOTICE OF LICENSE
+
+This source file is subject to the MIT License
+that is bundled with this package in the file LICENSE.txt.
+It is also available through the world-wide-web at this URL:
+http://opensource.org/licenses/mit-license.php
+
+@category   	{{Namespace}}
+@package		{{Namespace}}_{{Module}}
+@copyright  	Copyright (c) {{Y}}
+@license		http://opensource.org/licenses/mit-license.php MIT License
+</license>
+<sort_order>7</sort_order>
+<entities><entity>
+<label_singular>Batch</label_singular>
+<label_plural>Batches</label_plural>
+<name_singular>batche</name_singular>
+<name_plural>batches</name_plural>
+<created_to_grid>1</created_to_grid>
+<updated_to_grid>1</updated_to_grid>
+<add_status>1</add_status>
+<use_frontend>0</use_frontend>
+<frontend_list></frontend_list>
+<frontend_list_template>page/2columns-left.phtml</frontend_list_template>
+<frontend_view></frontend_view>
+<frontend_view_template>page/2columns-left.phtml</frontend_view_template>
+<frontend_add_seo></frontend_add_seo>
+<rss></rss>
+<widget></widget>
+<link_product>1</link_product>
+<show_on_product>1</show_on_product>
+<show_products>1</show_products>
+<is_tree>0</is_tree>
+<url_rewrite></url_rewrite>
+<admin_search>1</admin_search>
+<create_api>0</create_api>
+<attributes><attribute>
+<label>Batch Name</label>
+<code>batches_name_input</code>
+<type>text</type>
+<position></position>
+<note></note>
+<required>1</required>
+<editor></editor>
+<admin_grid>1</admin_grid>
+<frontend>0</frontend>
+<widget>0</widget>
+<rss>0</rss>
+<is_name>1</is_name>
+</attribute>
+</attributes></entity>
+</entities><relations></relations></module>

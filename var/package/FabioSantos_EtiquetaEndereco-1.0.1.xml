@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>FabioSantos_EtiquetaEndereco</name>
+    <version>1.0.1</version>
+    <stability>stable</stability>
+    <license>GNU General Public License (GPL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Etiquetas de Endere&#xE7;amento dos Correios para Magento</summary>
+    <description>Extens&#xE3;o permite gerar e imprimir etiquetas para endere&#xE7;amento de encomendas, com impress&#xE3;o de CEP em c&#xF3;digo de barras, exatamente iguais &#xE0;s geradas pela ferramenta "Endere&#xE7;ador" dispon&#xED;vel no site dos Correios.</description>
+    <notes>Bugs Corrigidos</notes>
+    <authors><author><name>Fabio Santos</name><user>FabioSantos</user><email>fmosquini@hotmail.com</email></author></authors>
+    <date>2013-07-21</date>
+    <time>22:22:12</time>
+    <contents><target name="magecommunity"><dir name="FabioSantos"><dir name="EtiquetaEndereco"><dir name="Block"><dir name="Etiqueta"><file name="Grid.php" hash="93aebab1b33837aab0a16ce48f7af014"/></dir><file name="Etiqueta.php" hash="3788d45677419a9840e7857d1b25b125"/><file name="Printetiqueta.php" hash="9eb3bfda3ae6d15533a4263bd5c0ca14"/></dir><dir name="Model"><file name="Phpcode128.php" hash="4b81cb2a70dac264a1f3075c1566716c"/></dir><dir name="controllers"><file name="EtiquetaController.php" hash="05ae6a9301fe68d158e1816a2f335ec7"/></dir><dir name="etc"><file name="config.xml" hash="aad436b3edb01a057b329fb180726b66"/><file name="system.xml" hash="4edbc987ca1d08d2ab127d35c25f1255"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="fabiosantos"><file name="etiquetaendereco.xml" hash="181d852a3d9cd32cc46f6331b3288917"/></dir></dir><dir name="template"><dir name="etiquetaendereco"><file name="massaction.phtml" hash="2a364f6eec134860ccdf4172b4ec0057"/><file name="printAR.phtml" hash="c5c42a262cb190f4b0775d838f05a032"/><file name="printEtiqueta2.phtml" hash="151f9203dc65d40506e4bf1e84fdb2ac"/><file name="printEtiqueta4.phtml" hash="3bf68f7880682fdf928a608111a45615"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="FabioSantos_EtiquetaEndereco.xml" hash="f053cac221fec40882567d73dffc487c"/></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="images"><dir name="etiquetaendereco"><file name="0.gif" hash="e51205ceea71b298ebccf3441728ccb6"/><file name="1.gif" hash="987b4c7488ca358c216e88a5d957621f"/><file name="ar2_r3_c2.gif" hash="de888fd1334c038c7ce1ba5117d1e7a9"/><file name="ar2_r5_c5.gif" hash="4fa92c8726b65fb3d749b6a986f23d89"/><file name="ar2_r6_c10.gif" hash="1a9274c16f128425dad0cad2191d9fcf"/><file name="destinatario.gif" hash="af34640b0b6672bd8650b87554102985"/><file name="destinatario_peq.gif" hash="ecbfc5fe83e882bcc67163199dbf379c"/><file name="logo_correios.gif" hash="3cd3e435510f18de18e4190208b33afe"/><file name="logo_correios_peq.gif" hash="ad04e2410e8a8dc43efaebb01a01abd9"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
